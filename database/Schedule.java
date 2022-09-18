@@ -1,7 +1,9 @@
+package database;
+
 import java.sql.Time;
 
 public class Schedule {
-    public Schedule(String idLT, int maVDV, String giaiThiDau, String diaDiemThiDau, String noiDungThiDau, String nhomTuoiThiDau, String thanhTichThiDau, String thuHangThiDau, Time ngayBatDau, Time ngayKetThuc) {
+    public Schedule(String idLT, long maVDV, String giaiThiDau, String diaDiemThiDau, String noiDungThiDau, String nhomTuoiThiDau, String thanhTichThiDau, Time ngayBatDau, Time ngayKetThuc) {
         this.idLT = idLT;
         this.maVDV = maVDV;
         this.giaiThiDau = giaiThiDau;
@@ -9,18 +11,16 @@ public class Schedule {
         this.noiDungThiDau = noiDungThiDau;
         this.nhomTuoiThiDau = nhomTuoiThiDau;
         this.thanhTichThiDau = thanhTichThiDau;
-        this.thuHangThiDau = thuHangThiDau;
         this.ngayBatDau = ngayBatDau;
         this.ngayKetThuc = ngayKetThuc;
     }
     private String idLT;
-    private int maVDV;
+    private long  maVDV;
     private String giaiThiDau;
     private String diaDiemThiDau;
     private String noiDungThiDau;
     private String nhomTuoiThiDau;
     private String thanhTichThiDau;
-    private String thuHangThiDau;
     private Time ngayBatDau;
     private Time ngayKetThuc;
 
@@ -33,11 +33,11 @@ public class Schedule {
         this.idLT = idLT;
     }
 
-    public int getmaVDV() {
+    public long  getmaVDV() {
         return maVDV;
     }
 
-    public void setmaVDV(int maVDV) {
+    public void setmaVDV(long  maVDV) {
         this.maVDV = maVDV;
     }
 
@@ -75,14 +75,6 @@ public class Schedule {
 
     public void setthanhTichThiDau(String thanhTichThiDau) {
         this.thanhTichThiDau = thanhTichThiDau;
-    }
-
-    public String getthuHangThiDau() {
-        return thuHangThiDau;
-    }
-
-    public void setthuHangThiDau(String thuHangThiDau) {
-        this.thuHangThiDau= thuHangThiDau;
     }
 
     public Time getngayBatDau() {

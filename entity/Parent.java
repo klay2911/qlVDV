@@ -1,6 +1,31 @@
+package entity;
+
 import java.sql.Time;
 
+@Entity
+@Table(name = "Parent")
 public class Parent {
+
+    @idPhuHuynh
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="id_PhuHuynh")
+    private String idPhuHuynh;
+
+    @Column(name="ho_Ten_Bo")
+    private String hoTenBo;
+
+    @Column(name="dienThoaiBo")
+    private String dienThoaiBo;
+
+    @Column(name="ho_Ten_Me")
+    private String hoTenMe;
+
+    @Column(name="dien_Thoai_Me")
+    private String dienThoaiMe;
+
+    public Parent(){
+    }
+
     public Parent(String idPhuHuynh, String hoTenBo, String dienThoaiBo,String hoTenMe, String dienThoaiMe ) {
         this.idPhuHuynh = idPhuHuynh;
         this.hoTenBo = hoTenBo;
@@ -8,12 +33,6 @@ public class Parent {
         this.hoTenMe = hoTenMe;
         this.dienThoaiMe = dienThoaiMe;
     }
-
-    private String idPhuHuynh;
-    private String hoTenBo;
-    private String dienThoaiBo;
-    private String hoTenMe;
-    private String dienThoaiMe;
 
     public String getIdPhuHuynh() {
         return idPhuHuynh;
@@ -53,5 +72,16 @@ public class Parent {
 
     public void setDienThoaiMe(String dienThoaiMe) {
         this.dienThoaiMe = dienThoaiMe;
+    }
+
+    @Override
+    public String toString() {
+        return "Parent[" +
+                "idPhuHuynh='" + idPhuHuynh + '\'' +
+                ", hoTenBo='" + hoTenBo + '\'' +
+                ", dienThoaiBo='" + dienThoaiBo + '\'' +
+                ", hoTenMe='" + hoTenMe + '\'' +
+                ", dienThoaiMe='" + dienThoaiMe + '\'' +
+                ']';
     }
 }

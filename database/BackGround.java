@@ -1,33 +1,39 @@
+package database;
+
 import java.sql.Time;
 
 public class BackGround {
-    public Parent(String idTL, String hoTen, String gioiTinh, Time thoiGianTapLuyen, String monThiDau, String tuyenVDV, String hlvPhuHuynh, String dangCapVDV ) {
-        this.idTl = idTL;
+    public BackGround(String monThiDau,long maVDV, String hoTen, String gioiTinh, Time thoiGianTapLuyen, String tuyenVDV, String hlvPhuTrach, String dangCapVDV ) {
+        this.monThiDau = monThiDau;
+        this.maVDV = maVDV;
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.thoiGianTapLuyen = thoiGianTapLuyen;
-        this.monThiDau = monThiDau;
         this.tuyenVDV = tuyenVDV;
-        this.hlvPhuTrach = hlvPhuHuynh;
+        this.hlvPhuTrach = hlvPhuTrach;
         this.dangCapVDV = dangCapVDV;
     }
 
-    private String idTl;
+    private String monThiDau;
+    private long maVDV;
     private String hoTen;
     private String gioiTinh;
     private Time thoiGianTapLuyen;
-    private String monThiDau;
     private String tuyenVDV;
     private String hlvPhuTrach;
     private String dangCapVDV;
 
-    public String getIdTl() {
-        return idTl;
+    public String getMonThiDau() {
+        return monThiDau;
     }
 
-    public void setIdTl(String idTl) {
-        this.idTl = idTl;
+    public void setMonThiDau(String monThiDau) {
+        this.monThiDau = monThiDau;
     }
+
+    public long getMaVDV() {return maVDV;}
+
+    public void setMaVDV(long maVDV) {this.maVDV = maVDV;}
 
     public String getHoTen() {
         return hoTen;
@@ -51,14 +57,6 @@ public class BackGround {
 
     public void setThoiGianTapLuyen(Time thoiGianTapLuyen) {
         this.thoiGianTapLuyen = thoiGianTapLuyen;
-    }
-
-    public String getMonThiDau() {
-        return monThiDau;
-    }
-
-    public void setMonThiDau(String monThiDau) {
-        this.monThiDau = monThiDau;
     }
 
     public String getTuyenVDV() {

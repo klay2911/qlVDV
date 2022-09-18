@@ -1,5 +1,9 @@
+package database;
+
+import java.sql.Time;
+
 public class Athlete {
-    public Athlete(int maVDV, String hoTen, String gioiTinh, String ngaySinh, int dienThoai, int cccd, String diaChi, String idPhuHuynh, String idTL, String idTC, String idDTQG) {
+    public Athlete(long maVDV, String hoTen, String gioiTinh, Time ngaySinh, String dienThoai, String cccd, String diaChi, String idPhuHuynh, String idTL, String idTC, String idDTQG) {
         this.maVDV = maVDV;
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
@@ -8,29 +12,27 @@ public class Athlete {
         this.cccd = cccd;
         this.diaChi = diaChi;
         this.idPhuHuynh = idPhuHuynh;
-        this.idTL = idTL;
         this.idTC = idTC;
         this.idDTQG = idDTQG;
     }
 
-    private int maVDV;
+    private long maVDV;
     private String hoTen;
     private String gioiTinh;
-    private String ngaySinh;
-    private int dienThoai;
-    private int cccd;
+    private Time ngaySinh;
+    private String dienThoai;
+    private String cccd;
     private String diaChi;
     private String idPhuHuynh;
-    private String idTL;
     private String idTC;
     private String idDTQG;
 
 
-    public int getmaVDV() {
+    public long getmaVDV() {
         return maVDV;
     }
 
-    public void setmaVDV(int maVDV) {
+    public void setmaVDV(long maVDV) {
         this.maVDV = maVDV;
     }
 
@@ -50,25 +52,25 @@ public class Athlete {
         this.gioiTinh = gioiTinh;
     }
 
-    public String getngaySinh() {
+    public Time getngaySinh() {
         return ngaySinh;
     }
 
-    public void setngaySinh(String ngaySinh) {
+    public void setngaySinh(Time ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
-    public int getdienThoai() {
+    public String getdienThoai() {
         return dienThoai;
     }
 
-    public void setdienThoai(int dienThoai) {
+    public void setdienThoai(String dienThoai) {
         this.dienThoai = dienThoai;
     }
 
-    public int getcccd() {return cccd;}
+    public String getcccd() {return cccd;}
 
-    public void setcccd(int cccd) {this.cccd = cccd;}
+    public void setcccd(String cccd) {this.cccd = cccd;}
 
     public String getdiaChi() {
         return diaChi;
@@ -92,14 +94,6 @@ public class Athlete {
 
     public void setidTC(String IDPTC) {
         this.idTC= idTC;
-    }
-
-    public String getidTL() {
-        return idTL;
-    }
-
-    public void setidTL(String idTL) {
-        this.idTL= idTL;
     }
 
     public String getidDTQG() {

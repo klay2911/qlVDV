@@ -1,7 +1,9 @@
+package database;
+
 import java.sql.Time;
 
 public class Award_Discipline {
-    public FitnessIndex(String id, String soKTKL, String noiDung, Time ngay, int maVDV, String loai) {
+    public Award_Discipline(String id, String soKTKL, String noiDung, Time ngay, long maVDV, String loai) {
         this.id = id;
         this.soKTKL = soKTKL;
         this.noiDung = noiDung;
@@ -13,7 +15,7 @@ public class Award_Discipline {
     private String soKTKL;
     private String noiDung;
     private Time ngay;
-    private int maVDV;
+    private long maVDV;
     private String loai;
 
     public String getId() {
@@ -48,11 +50,11 @@ public class Award_Discipline {
         this.ngay = ngay;
     }
 
-    public int getMaVDV() {
+    public long getMaVDV() {
         return maVDV;
     }
 
-    public void setMaVDV(int maVDV) {
+    public void setMaVDV(long maVDV) {
         this.maVDV = maVDV;
     }
 
