@@ -1,17 +1,20 @@
-package entity;
+package vu.ql_vdv.Entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Time;
 
 @Entity
-@Table(name ="BackGround")
-public class BackGround {
-    @monThiDau
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="monThiDau",unique = true, nullable = false)
-    private String monThiDau;
-
+@Table(name ="background")
+public class BackGround implements Serializable {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="idBackGround",unique = true, nullable = false)
+    private Integer IDBackGround;
     @Column(name="ma_VanDongVien")
     private long maVDV;
+    @Column(name="MonThiDau")
+    private String monThiDau;
     @Column(name="ho_Ten")
     private String hoTen;
 
@@ -20,8 +23,6 @@ public class BackGround {
 
     @Column(name="ThoiGianTapLuyen")
     private Time thoiGianTapLuyen;
-
-
 
     @Column(name="tuyen_VanDongVien")
     private String tuyenVDV;
@@ -35,23 +36,24 @@ public class BackGround {
     public BackGround() {
     }
 
-    public BackGround(String idTL, String hoTen, String gioiTinh, Time thoiGianTapLuyen, String monThiDau, String tuyenVDV, String hlvPhuTrach, String dangCapVDV) {
-        this.monThiDau = monThiDau;
-        this.maVDV = maVDV
+    public BackGround(Integer IDBackGround,long maVDV, String hoTen, String gioiTinh, Time thoiGianTapLuyen, String monThiDau, String tuyenVDV, String hlvPhuTrach, String dangCapVDV) {
+        this.IDBackGround = IDBackGround;
+        this.maVDV = maVDV;
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.thoiGianTapLuyen = thoiGianTapLuyen;
+        this.monThiDau = monThiDau;
         this.tuyenVDV = tuyenVDV;
         this.hlvPhuTrach = hlvPhuTrach;
         this.dangCapVDV = dangCapVDV;
     }
 
-    public String getMonThiDau() {
-        return monThiDau;
+    public Integer getIDBackGround() {
+        return IDBackGround;
     }
 
-    public void setMonThiDau(String monThiDau) {
-        this.monThiDau = monThiDau;
+    public void setIDBackGround(Integer IDBackGround) {
+        this.IDBackGround = IDBackGround;
     }
 
     public long getMaVDV() {
@@ -60,6 +62,14 @@ public class BackGround {
 
     public void setMaVDV(long maVDV) {
         this.maVDV = maVDV;
+    }
+
+    public String getMonThiDau() {
+        return monThiDau;
+    }
+
+    public void setMonThiDau(String monThiDau) {
+        this.monThiDau = monThiDau;
     }
 
     public String getHoTen() {
@@ -113,8 +123,9 @@ public class BackGround {
     @Override
     public String toString() {
         return "BackGround{" +
-                "monThiDau='" + monThiDau + '\'' +
+                "IDBackGround=" + IDBackGround +
                 ", maVDV=" + maVDV +
+                ", monThiDau='" + monThiDau + '\'' +
                 ", hoTen='" + hoTen + '\'' +
                 ", gioiTinh='" + gioiTinh + '\'' +
                 ", thoiGianTapLuyen=" + thoiGianTapLuyen +

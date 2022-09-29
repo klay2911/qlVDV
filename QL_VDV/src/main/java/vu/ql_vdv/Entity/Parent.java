@@ -1,13 +1,14 @@
-package entity;
+package vu.ql_vdv.Entity;
 
-import java.sql.Time;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "Parent")
-public class Parent {
+@Table(name = "parent")
+public class Parent implements Serializable {
 
-    @idPhuHuynh
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_PhuHuynh")
     private String idPhuHuynh;
 

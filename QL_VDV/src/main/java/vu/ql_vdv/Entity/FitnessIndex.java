@@ -1,10 +1,14 @@
-package entity;
+package vu.ql_vdv.Entity;
+
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@table(name ="FitnessIndex")
-public class FitnessIndex {
-    @idTC
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+@Table(name ="fitnessindex")
+public class FitnessIndex implements Serializable {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_The_Chat")
     private String idTC;
 
@@ -87,7 +91,7 @@ public class FitnessIndex {
     }
 
     public Float getganASin() {
-        return ganASin();
+        return ganASin;
     }
 
     public void setganASin(Float ganASin) {

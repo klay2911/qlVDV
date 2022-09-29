@@ -1,14 +1,16 @@
-package entity;
+package vu.ql_vdv.Entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Time;
 
 @Entity
-@Table(name = "Schedule")
-public class Schedule {
-    @idLT
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+@Table(name = "schedule")
+public class Schedule implements Serializable {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_Lich_Trinh")
-    private String idLT;
+    private Integer idLT;
 
     @Column(name="ma_Van_Dong_Vien")
     private long maVDV;
@@ -35,7 +37,7 @@ public class Schedule {
 
     public Schedule(){
     }
-    public Schedule(String idLT, long maVDV, String giaiThiDau, String diaDiemThiDau, String noiDungThiDau, String nhomTuoiThiDau, String thanhTichThiDau, Time ngayBatDau, Time ngayKetThuc) {
+    public Schedule(Integer idLT, long maVDV, String giaiThiDau, String diaDiemThiDau, String noiDungThiDau, String nhomTuoiThiDau, String thanhTichThiDau, Time ngayBatDau, Time ngayKetThuc) {
         this.idLT = idLT;
         this.maVDV = maVDV;
         this.giaiThiDau = giaiThiDau;
@@ -47,11 +49,11 @@ public class Schedule {
         this.ngayKetThuc = ngayKetThuc;
     }
 
-    public String getIdLT() {
+    public Integer getIdLT() {
         return idLT;
     }
 
-    public void setIdLT(String idLT) {
+    public void setIdLT(Integer idLT) {
         this.idLT = idLT;
     }
 
@@ -134,3 +136,4 @@ public class Schedule {
                 ']';
     }
 }
+

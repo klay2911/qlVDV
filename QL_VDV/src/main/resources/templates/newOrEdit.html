@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1> New or Edit Athlete</h1>
+<hr />
+<form action ="@{/athlete/saveOrUpdate}"
+method="post" th:object ="${athlete} ">
+    Mã Vận Động Viên:
+    <input type="text" placeholder="MaVDV" th:field ="*{maVDV}" />
+    <br /><br />
+    Họ Tên:
+    <input type="text" placeholder="HoTen" th:field="*{hoTen}">
+    <br/><br />
+    Giới Tính:
+    <input type="text" placeholder="GioiTinh" th:field="*{gioiTinh}">
+    <br/><br />
+    Ngày Sinh:
+    <input type="date" placeholder="DienThoai" th:field="*{ngaySinh}">
+    <br/><br />
+    Điện Thoại:
+    <input type="text" placeholder="DienThoai" th:field="*{dienThoai}">
+    <br/><br />
+    Căn cước công dân:
+    <input type="text" placeholder="CanCuocCongDan" th:field="*{cccd}">
+    <br/><br />
+    Địa chỉ:
+    <input type="text" placeholder="DiaChi" th:field="*{diaChi}">
+    <br/><br />
+    <input type="submit" value="Save"/>
+</form>
+</body>
+</html>

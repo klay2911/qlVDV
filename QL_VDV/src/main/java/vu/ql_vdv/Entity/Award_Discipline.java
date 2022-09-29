@@ -1,13 +1,16 @@
-package entity;
+package vu.ql_vdv.Entity;
 
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Time;
 
 @Entity
-@Table(name = "Award_Discipline")
-public class Award_Discipline {
+@Table(name = "award_discipline")
+public class Award_Discipline implements Serializable {
 
-    @ID
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id", unique = true, nullable = false)
     private String ID;
 
@@ -98,3 +101,4 @@ public class Award_Discipline {
                 '}';
     }
 }
+

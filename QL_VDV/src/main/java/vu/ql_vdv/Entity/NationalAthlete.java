@@ -1,14 +1,17 @@
-package entity;
+package vu.ql_vdv.Entity;
 
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Time;
 
 @Entity
-@Table(name = "nationalAthelete")
-public class NationalAthlete {
-    @idDTQG
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+@Table(name = "national_athlete")
+public class NationalAthlete implements Serializable {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_Doi_Tuyen_Quoc_Gia")
-    private String idDTQG;
+    private Integer idDTQG;
 
     @Column(name="doi_Tuong")
     private String doiTuong;
@@ -24,7 +27,7 @@ public class NationalAthlete {
 
     public NationalAthlete(){
     }
-    public NationalAthlete(String idDTQG, String doiTuong, Time thoiGianTapTrung, Time thoiGianVe, long maVDV ) {
+    public NationalAthlete(Integer idDTQG, String doiTuong, Time thoiGianTapTrung, Time thoiGianVe, long maVDV ) {
         this.maVDV = maVDV;
         this.doiTuong = doiTuong;
         this.thoiGianTapTrung = thoiGianTapTrung;
@@ -32,7 +35,7 @@ public class NationalAthlete {
         this.idDTQG = idDTQG;
     }
 
-    public String getIdDTQG() {
+    public Integer getIdDTQG() {
         return idDTQG;
     }
 

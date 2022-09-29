@@ -1,13 +1,20 @@
-package entity;
+package vu.ql_vdv.Entity;
 
+import java.io.Serializable;
 import java.sql.Time;
+import javax.persistence.*;
 
-
-public class Athlete {
-    @maVDV
+@Entity
+@Table(name="athlete",schema="ql_vdv")
+public class Athlete implements Serializable {
+   /* @maVDV
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="ma_van_dong_vien",unique = true, nullable = false)
-    private long maVDV;
+    private long maVDV;*/
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ma_vdv",unique = true, nullable = false)
+    private Long maVDV;
 
     @Column(name="ho_Ten")
     private String hoTen;
@@ -15,7 +22,7 @@ public class Athlete {
     @Column(name="gioi_Tinh")
     private String gioiTinh;
     @Column(name="ngay_Sinh")
-    private String ngaySinh;
+    private Time ngaySinh;
 
     @Column(name="dien_Thoai")
     private String dienThoai;
@@ -31,8 +38,13 @@ public class Athlete {
     @Column(name="id_The_Chat")
     private String idTC;
 
+    @Column(name="id_lichTrinh")
+    private Integer idLT;
     @Column(name="id_Doi_Tuyen_Quoc_Gia")
-    private String idDTQG;
+    private Integer idDTQG;
+
+    @Column(name="id_background")
+    private Integer idBackGround;
 
     // define constructors
 
@@ -40,7 +52,7 @@ public class Athlete {
 
     }
 
-    public Athlete(long maVDV, String hoTen, String gioiTinh, Time ngaySinh, String dienThoai, String cccd, String diaChi, String idPhuHuynh, String idTC, String idDTQG) {
+    public Athlete(long maVDV, String hoTen, String gioiTinh, Time ngaySinh, String dienThoai, String cccd, String diaChi, String idPhuHuynh, String idTC,Integer idLT, Integer idDTQG, Integer idBackGround) {
         this.maVDV = maVDV;
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
@@ -50,16 +62,18 @@ public class Athlete {
         this.diaChi = diaChi;
         this.idPhuHuynh = idPhuHuynh;
         this.idTC = idTC;
+        this.idLT = idLT;
         this.idDTQG = idDTQG;
+        this.idBackGround = idBackGround;
     }
 
     // define getter/setter
 
-    public long getMaVDV() {
+    public Long getMaVDV() {
         return maVDV;
     }
 
-    public void setMaVDV(long maVDV) {
+    public void setMaVDV(Long maVDV) {
         this.maVDV = maVDV;
     }
 
@@ -79,11 +93,11 @@ public class Athlete {
         this.gioiTinh = gioiTinh;
     }
 
-    public String getNgaySinh() {
+    public Time getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(String ngaySinh) {
+    public void setNgaySinh(Time ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -127,30 +141,50 @@ public class Athlete {
         this.idTC = idTC;
     }
 
-    public String getIdDTQG() {
+    public Integer getIdLT() {
+        return idLT;
+    }
+
+    public void setIdLT(Integer idLT) {
+        this.idLT = idLT;
+    }
+
+    public Integer getIdDTQG() {
         return idDTQG;
     }
 
-    public void setIdDTQG(String idDTQG) {
+    public void setIdDTQG(Integer idDTQG) {
         this.idDTQG = idDTQG;
+    }
+
+    public Integer getIdBackGround() {
+        return idBackGround;
+    }
+
+    public void setIdBackGround(Integer idBackGround) {
+        this.idBackGround = idBackGround;
     }
 
 
     // define tostring
 
+
     @Override
     public String toString() {
-        return "Athlete [" +
+        return "Athlete{" +
                 "maVDV=" + maVDV +
                 ", hoTen='" + hoTen + '\'' +
                 ", gioiTinh='" + gioiTinh + '\'' +
-                ", ngaySinh='" + ngaySinh + '\'' +
+                ", ngaySinh=" + ngaySinh +
                 ", dienThoai='" + dienThoai + '\'' +
                 ", cccd='" + cccd + '\'' +
                 ", diaChi='" + diaChi + '\'' +
                 ", idPhuHuynh='" + idPhuHuynh + '\'' +
                 ", idTC='" + idTC + '\'' +
-                ", idDTQG='" + idDTQG + '\'' +
-                ']';
+                ", idLT=" + idLT +
+                ", idDTQG=" + idDTQG +
+                ", idBackGround=" + idBackGround +
+                '}';
     }
 }
+
