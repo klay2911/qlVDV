@@ -1,0 +1,63 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot - Hibernate</title>
+    <style>
+        table, th, td, tr {
+            border: 1px solid black;
+        }
+        td {
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1>List Athlete:</h1>
+<a th:href="@{/athlete-save}">Add Athlete</a>
+<br />
+<br />
+<table>
+    <tr>
+        <th>maVDV</th>
+        <th>hoTen</th>
+        <th>gioiTinh</th>
+        <th>ngaySinh</th>
+        <th>canCuocCongDan</th>
+        <th>diaChi</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="athlete : ${listAthlete}">
+        <tr>
+            <td><p th:text="${athlete.maVDV}"></p></td>
+            <td><p th:text="${athlete.hoTen}"></p></td>
+            <td><p th:text="${athlete.gioiTinh}"></p></td>
+            <td><p th:text="${athlete.ngaySinh}"></p></td>
+            <td><p th:text="${athlete.canCuocCongDan}"></p></td>
+            <td><p th:text="${athlete.diaChi}"></p></td>
+            <td><a th:href="@{/athlete-view/} + ${athlete.maVDV}">View</a></td>
+            <td><a th:href="@{/athlete-update/} + ${athlete.maVDV}">Edit</a></td>
+            <td><a th:href="@{/athleteDelete/} + ${athlete.maVDV}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
+athlete-save.html
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot - Hibernate</title>
+</head>
+<body>
+<a th:href="@{/athlete-list}">List Athlete</a><br />
+<h1>Add new Athlete:</h1>
+<form th:action="@{/saveAthlete}" method="POST" th:object="${athlete}">
+    HoTen: <input th:field="*{hoTen}"/> <br/> <br/>
+    GioiTinh: <input th:field="*{gioiTinh}"/> <br/> <br/>
+    NgaySinh: <input th:field="*{ngaySinh}"/> <br/> <br/>
+    CanCuocCongDan: <input th:field="*{canCuocCongDan}"/> <br/> <br/>
+    DiaChi: <input th:field="*{diaChi}"/> <br/> <br/>
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
