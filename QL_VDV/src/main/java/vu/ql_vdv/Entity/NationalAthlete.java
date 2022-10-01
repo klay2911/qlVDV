@@ -10,19 +10,15 @@ import java.sql.Time;
 public class NationalAthlete implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id_Doi_Tuyen_Quoc_Gia")
+    @Column(name="idDTQG")
     private Integer idDTQG;
-
-    @Column(name="doi_Tuong")
+    @Column(name="DoiTuong")
     private String doiTuong;
-
-    @Column(name="thoi_Gian_Tap_Trung")
+    @Column(name="ThoiGianTapTrung")
     private Time thoiGianTapTrung;
-
-    @Column(name="thoi_Gian_Ve")
+    @Column(name="ThoiGianVe")
     private Time thoiGianVe;
-
-    @Column(name="ma_Van_Dong_Vien")
+    @Column(name="MaVDV")
     private long maVDV;
 
     public NationalAthlete(){
@@ -39,7 +35,7 @@ public class NationalAthlete implements Serializable {
         return idDTQG;
     }
 
-    public void setIdDTQG(String idDTQG) {
+    public void setIdDTQG(Integer idDTQG) {
         this.idDTQG = idDTQG;
     }
 

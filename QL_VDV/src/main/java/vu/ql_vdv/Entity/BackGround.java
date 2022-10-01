@@ -11,26 +11,26 @@ public class BackGround implements Serializable {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="idBackGround",unique = true, nullable = false)
     private Integer IDBackGround;
-    @Column(name="ma_VanDongVien")
+    @Column(name="MaVDV")
     private long maVDV;
     @Column(name="MonThiDau")
     private String monThiDau;
-    @Column(name="ho_Ten")
+    @Column(name="HoTen")
     private String hoTen;
 
-    @Column(name="Gioi_Tinh")
+    @Column(name="GioiTinh")
     private String gioiTinh;
 
     @Column(name="ThoiGianTapLuyen")
     private Time thoiGianTapLuyen;
 
-    @Column(name="tuyen_VanDongVien")
+    @Column(name="TuyenVDV")
     private String tuyenVDV;
 
-    @Column(name="HLV_PhuTrach")
+    @Column(name="HLVPhuTrach")
     private String hlvPhuTrach;
 
-    @Column(name="DangCap_VanDongVien")
+    @Column(name="DangCapVDV")
     private String dangCapVDV;
 
     public BackGround() {

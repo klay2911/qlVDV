@@ -9,19 +9,15 @@ public class Parent implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id_PhuHuynh")
+    @Column(name="IDPhuHuynh")
     private String idPhuHuynh;
-
-    @Column(name="ho_Ten_Bo")
+    @Column(name="HoTenBo")
     private String hoTenBo;
-
     @Column(name="dienThoaiBo")
     private String dienThoaiBo;
-
-    @Column(name="ho_Ten_Me")
+    @Column(name="HoTenMe")
     private String hoTenMe;
-
-    @Column(name="dien_Thoai_Me")
+    @Column(name="DienThoaiMe")
     private String dienThoaiMe;
 
     public Parent(){

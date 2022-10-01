@@ -1,38 +1,36 @@
 package vu.ql_vdv.Entity;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Time;
 
 @Entity
 @Table(name = "award_discipline")
-public class Award_Discipline implements Serializable {
-
+public class Award_Disclipline implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id", unique = true, nullable = false)
+    @Column(name="ID", unique = true, nullable = false)
     private String ID;
 
-    @Column(name="so_KhenThuong_KiLuat")
+    @Column(name="SoKTKL")
     private String soKTKL;
 
-    @Column(name="Noi_Dung")
+    @Column(name="NoiDung")
     private String noiDung;
 
     @Column(name="Ngay")
     private Time ngay;
 
-    @Column(name="ma_van_dong_vien", nullable = false)
+    @Column(name="MaVDV", nullable = false)
     private long maVDV;
 
     @Column(name="Loai")
     private String loai;
 
-    public Award_Discipline() {
+    public Award_Disclipline() {
     }
 
-    public Award_Discipline(String ID, String soKTKL, String noiDung, Time ngay, long maVDV, String loai) {
+    public Award_Disclipline(String ID, String soKTKL, String noiDung, Time ngay, long maVDV, String loai) {
         this.ID = ID;
         this.soKTKL = soKTKL;
         this.noiDung = noiDung;

@@ -9,33 +9,24 @@ import java.io.Serializable;
 public class FitnessIndex implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id_The_Chat")
+    @Column(name="IDTC")
     private String idTC;
-
-    @Column(name="chieu_Cao")
+    @Column(name="ChieuCao")
     private Float chieuCao;
-
-    @Column(name="can_Nang")
+    @Column(name="canNang")
     private Float canNang;
-
-    @Column(name="chieu_dai_chan")
+    @Column(name="chieudaichan")
     private Float chieuDaiChan;
-
-    @Column(name="chieu_dai_tay")
+    @Column(name="chieudaitay")
     private Float chieuDaiTay;
-
-    @Column(name="gan_A_Sin")
+    @Column(name="ganASin")
     private Float ganASin;
-
-    @Column(name="nhip_Tim")
+    @Column(name="NhipTim")
     private int nhipTim;
-
-    @Column(name="huyet_Ap")
+    @Column(name="huyetAp")
     private int huyetAp;
-
-    @Column(name="tinh_Trang_Suc_khoe")
+    @Column(name="TinhTrangSucKhoe")
     private String tinhTrangSucKhoe;
-
     public FitnessIndex(){
     }
     public FitnessIndex(String idTC, Float chieuCao, Float canNang, Float chieuDaiChan, Float chieuDaiTay, Float ganASin, int nhipTim, int huyetAp, String tinhTrangSucKhoe) {

@@ -9,30 +9,27 @@ import java.sql.Time;
 public class Schedule implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id_Lich_Trinh")
+    @Column(name="idLT")
     private Integer idLT;
-
-    @Column(name="ma_Van_Dong_Vien")
+    @Column(name="MaVDV")
     private long maVDV;
-
-    @Column(name="giai_Thi_Dau")
+    @Column(name="giaiThiDau")
     private String giaiThiDau;
-
-    @Column(name="dia_Diem_Thi_Dau")
+    @Column(name="diaDiemThiDau")
     private String diaDiemThiDau;
 
-    @Column(name="noi_Dung_Thi_Dau")
+    @Column(name="noiDungThiDau")
     private String noiDungThiDau;
 
-    @Column(name="nhom_Tuoi_Thi_Dau")
+    @Column(name="nhomTuoiThiDau")
     private String nhomTuoiThiDau;
 
-    @Column(name="thanh_Tich_Thi_Dau")
+    @Column(name="thanhTichThiDau")
     private String thanhTichThiDau;
-    @Column(name="ngay_Bat_Dau")
+    @Column(name="ngayBatDau")
     private Time ngayBatDau;
 
-    @Column(name="ngay_Ket_Thuc")
+    @Column(name="ngayKetThuc")
     private Time ngayKetThuc;
 
     public Schedule(){

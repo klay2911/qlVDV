@@ -13,37 +13,37 @@ public class Athlete implements Serializable {
     private long maVDV;*/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ma_vdv",unique = true, nullable = false)
+    @Column(name = "MaVDV",unique = true, nullable = false)
     private Long maVDV;
 
-    @Column(name="ho_Ten")
+    @Column(name="HoTen")
     private String hoTen;
 
-    @Column(name="gioi_Tinh")
+    @Column(name="GioiTinh")
     private String gioiTinh;
-    @Column(name="ngay_Sinh")
+    @Column(name="NgaySinh")
     private Time ngaySinh;
 
-    @Column(name="dien_Thoai")
+    @Column(name="DienThoai")
     private String dienThoai;
 
-    @Column(name="can_cuoc_cong_dan")
+    @Column(name="CCCD")
     private String cccd;
 
-    @Column(name="dia_Chi")
+    @Column(name="DiaChi")
     private String diaChi;
 
-    @Column(name="id_PhuHuynh")
+    @Column(name="IDPhuHuynh")
     private String idPhuHuynh;
-    @Column(name="id_The_Chat")
+    @Column(name="IDTC")
     private String idTC;
 
-    @Column(name="id_lichTrinh")
+    @Column(name="IDlT")
     private Integer idLT;
-    @Column(name="id_Doi_Tuyen_Quoc_Gia")
+    @Column(name="IDDTQG")
     private Integer idDTQG;
 
-    @Column(name="id_background")
+    @Column(name="IDBackGround")
     private Integer idBackGround;
 
     // define constructors
