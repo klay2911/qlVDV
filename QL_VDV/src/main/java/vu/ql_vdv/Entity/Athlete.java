@@ -7,10 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name="athlete",schema="ql_vdv")
 public class Athlete implements Serializable {
-   /* @maVDV
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="ma_van_dong_vien",unique = true, nullable = false)
-    private long maVDV;*/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "MaVDV",unique = true, nullable = false)
